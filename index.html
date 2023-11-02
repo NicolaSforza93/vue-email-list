@@ -11,13 +11,18 @@
     h1 {
         margin-left: 20px;
     }
+
+    .hidden {
+        display: none;
+    }
 </style>
 <body>
     
     <div id="app">
         <h1>Lista Email</h1>
         <ol>
-            <li v-for="(item, index) in email" :key="index">{{ item }}</li>
+            <li :class="email.length !== 10 ? 'hidden' : ''"
+            v-for="(item, index) in email" :key="index">{{ item }}</li>
         </ol>
     </div>
     
