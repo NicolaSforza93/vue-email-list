@@ -8,22 +8,28 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <style>
-    h1 {
-        margin-left: 20px;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .hidden {
-        display: none;
+    h1, p {
+        margin-left: 10px;
+    }
+
+    ol {
+        margin-left: 30px;
     }
 </style>
 <body>
     
     <div id="app">
         <h1>Lista Email</h1>
-        <ol>
-            <li :class="email.length !== 10 ? 'hidden' : ''"
-            v-for="(item, index) in email" :key="index">{{ item }}</li>
+        <ol v-if="email.length === 10">
+            <li v-for="(item, index) in email" :key="index">{{ item }}</li>
         </ol>
+        <p v-else>In caricamento...</p>
     </div>
     
 
